@@ -8,6 +8,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.lojasocial.ui.presentation.dashboard.Dashboard
+import com.example.lojasocial.ui.presentation.dashboard.DashboardViewModel
 import com.example.lojasocial.ui.presentation.loading.LoadingApp
 import com.example.lojasocial.ui.presentation.loading.LoadingViewModel
 import com.example.lojasocial.ui.presentation.login.Login
@@ -36,6 +38,9 @@ fun SetupNavGraph(loadingViewModel: LoadingViewModel){
             val singUpViewModel: SignUpViewModel = viewModel()
             SignUp(navController = navController, singUpViewModel)
         }
-
+        composable<Route.Dashboard>{
+            val dashboardViewModel: DashboardViewModel = viewModel()
+            Dashboard(navController = navController,dashboardViewModel)
+        }
     }
 }

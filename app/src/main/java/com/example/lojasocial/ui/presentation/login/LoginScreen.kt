@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.lojasocial.R
 import com.example.lojasocial.domain.model.User
+import com.example.lojasocial.navigation.Route
 import com.example.lojasocial.utils.AuthState
 import com.example.lojasocial.utils.showToastError
 import com.example.lojasocial.utils.showToastMessage
@@ -53,7 +54,7 @@ fun Login(navController: NavHostController, loginViewModel: LoginViewModel) {
         when(authState.value){
             is AuthState.Authenticated ->{
                 //navController.navigate(Route.Home(user!!.email))
-                //navController.navigate(Route.Dashboard)
+                navController.navigate(Route.Dashboard)
             }
             is AuthState.Error -> showToastMessage(context,(authState.value as AuthState.Error).message)
             else -> Unit
