@@ -8,6 +8,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import com.example.lojasocial.ui.presentation.checkOut.CheckOutScreen
+import com.example.lojasocial.ui.presentation.checkOut.CheckOutViewModel
 import com.example.lojasocial.ui.presentation.dashboard.Dashboard
 import com.example.lojasocial.ui.presentation.dashboard.DashboardViewModel
 import com.example.lojasocial.ui.presentation.loading.LoadingApp
@@ -47,6 +50,11 @@ fun SetupNavGraph(loadingViewModel: LoadingViewModel){
         composable<Route.Membros>{
             val memberViewModel: MemberViewModel = viewModel()
             MemberScreen(navController = navController, memberViewModel)
+        }
+        composable<Route.CheckOut>{backStackEntry ->
+            val member = backStackEntry.toRoute<Route.CheckOut>()
+            val checkOutViewModel: CheckOutViewModel = viewModel()
+            CheckOutScreen(navController = navController, checkOutViewModel, member.memberId)
         }
     }
 }
