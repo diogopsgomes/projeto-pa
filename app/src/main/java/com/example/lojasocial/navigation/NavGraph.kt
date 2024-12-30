@@ -19,6 +19,8 @@ import com.example.lojasocial.ui.presentation.login.Login
 import com.example.lojasocial.ui.presentation.login.LoginViewModel
 import com.example.lojasocial.ui.presentation.member.MemberScreen
 import com.example.lojasocial.ui.presentation.member.MemberViewModel
+import com.example.lojasocial.ui.presentation.memberEdit.MemberEditScreen
+import com.example.lojasocial.ui.presentation.memberEdit.MemberEditViewModel
 import com.example.lojasocial.ui.presentation.newMember.NewMemberScreen
 import com.example.lojasocial.ui.presentation.newMember.NewMemberViewModel
 import com.example.lojasocial.ui.presentation.signup.SignUp
@@ -56,6 +58,11 @@ fun SetupNavGraph(loadingViewModel: LoadingViewModel){
         composable<Route.NewMember>{
             val newMemberViewModel: NewMemberViewModel = viewModel()
             NewMemberScreen(navController = navController, newMemberViewModel)
+        }
+        composable<Route.MemberEdit>{backStackEntry ->
+            val member = backStackEntry.toRoute<Route.MemberEdit>()
+            val memberEditViewModel: MemberEditViewModel = viewModel()
+            MemberEditScreen(navController = navController, memberEditViewModel, member.memberId)
         }
         composable<Route.CheckOut>{backStackEntry ->
             val member = backStackEntry.toRoute<Route.CheckOut>()
