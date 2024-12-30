@@ -51,10 +51,10 @@ fun BottomBar(navController: NavHostController, atual: Route) {
 
     when(atual){
         Route.Dashboard -> screenDashboard = true
-//        Route.Membros -> screenMembros = true
-//        Route.Atividades -> screenAtividades = true
-//        Route.Users -> screenUtilizadores = true
-//        Route.Profile -> screenPerfil = true
+        Route.Membros -> screenMembros = true
+        Route.Atividades -> screenAtividades = true
+        Route.Users -> screenUtilizadores = true
+        Route.Profile -> screenPerfil = true
         else -> Unit
     }
 
@@ -113,10 +113,10 @@ fun BottomBar(navController: NavHostController, atual: Route) {
                 screenAtividades = false
                 screenUtilizadores = false
                 screenPerfil = false
-//                navController.navigate(Route.Membros) {
-//                    launchSingleTop = true
-//                    restoreState = true
-//                }
+                navController.navigate(Route.Membros) {
+                    launchSingleTop = true
+                    restoreState = true
+                }
             },
             icon = {
                 Icon(
@@ -153,10 +153,10 @@ fun BottomBar(navController: NavHostController, atual: Route) {
                 screenAtividades = true
                 screenUtilizadores = false
                 screenPerfil = false
-//                navController.navigate(Route.Activity) {
-//                    launchSingleTop = true
-//                    restoreState = true
-//                }
+                navController.navigate(Route.Activity) {
+                    launchSingleTop = true
+                    restoreState = true
+                }
             },
             icon = {
                 Icon(
@@ -193,10 +193,10 @@ fun BottomBar(navController: NavHostController, atual: Route) {
                 screenAtividades = false
                 screenUtilizadores = true
                 screenPerfil = false
-//                navController.navigate(Route.Users) {
-//                    launchSingleTop = true
-//                    restoreState = true
-//                }
+                navController.navigate(Route.Users) {
+                    launchSingleTop = true
+                    restoreState = true
+                }
             },
             icon = {
                 Icon(
@@ -233,10 +233,10 @@ fun BottomBar(navController: NavHostController, atual: Route) {
                 screenAtividades = false
                 screenUtilizadores = false
                 screenPerfil = true
-//                navController.navigate(Route.Profile) {
-//                    launchSingleTop = true
-//                    restoreState = true
-//                }
+                navController.navigate(Route.Profile) {
+                    launchSingleTop = true
+                    restoreState = true
+                }
             },
             icon = {
                 Icon(
