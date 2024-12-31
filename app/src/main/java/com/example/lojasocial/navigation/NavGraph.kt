@@ -25,6 +25,8 @@ import com.example.lojasocial.ui.presentation.newMember.NewMemberScreen
 import com.example.lojasocial.ui.presentation.newMember.NewMemberViewModel
 import com.example.lojasocial.ui.presentation.signup.SignUp
 import com.example.lojasocial.ui.presentation.signup.SignUpViewModel
+import com.example.lojasocial.ui.presentation.users.UsersScreen
+import com.example.lojasocial.ui.presentation.users.UsersViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @SuppressLint("RestrictedApi")
@@ -58,6 +60,10 @@ fun SetupNavGraph(loadingViewModel: LoadingViewModel){
         composable<Route.NewMember>{
             val newMemberViewModel: NewMemberViewModel = viewModel()
             NewMemberScreen(navController = navController, newMemberViewModel)
+        }
+        composable<Route.Users>{
+            val usersViewModel: UsersViewModel = viewModel()
+            UsersScreen(navController = navController, usersViewModel)
         }
         composable<Route.MemberEdit>{backStackEntry ->
             val member = backStackEntry.toRoute<Route.MemberEdit>()
