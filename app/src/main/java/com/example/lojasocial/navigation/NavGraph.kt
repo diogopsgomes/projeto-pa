@@ -2,6 +2,7 @@ package com.example.lojasocial.navigation
 
 import android.annotation.SuppressLint
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -23,6 +24,8 @@ import com.example.lojasocial.ui.presentation.memberEdit.MemberEditScreen
 import com.example.lojasocial.ui.presentation.memberEdit.MemberEditViewModel
 import com.example.lojasocial.ui.presentation.newMember.NewMemberScreen
 import com.example.lojasocial.ui.presentation.newMember.NewMemberViewModel
+import com.example.lojasocial.ui.presentation.profile.ProfileScreen
+import com.example.lojasocial.ui.presentation.profile.ProfileViewModel
 import com.example.lojasocial.ui.presentation.signup.SignUp
 import com.example.lojasocial.ui.presentation.signup.SignUpViewModel
 import com.example.lojasocial.ui.presentation.users.UsersScreen
@@ -64,6 +67,11 @@ fun SetupNavGraph(loadingViewModel: LoadingViewModel){
         composable<Route.Users>{
             val usersViewModel: UsersViewModel = viewModel()
             UsersScreen(navController = navController, usersViewModel)
+        }
+        composable<Route.Profile>{
+            val profileViewModel: ProfileViewModel = viewModel()
+            Log.d("teste", "Passou no navGraph")
+            ProfileScreen(navController = navController, profileViewModel)
         }
         composable<Route.MemberEdit>{backStackEntry ->
             val member = backStackEntry.toRoute<Route.MemberEdit>()

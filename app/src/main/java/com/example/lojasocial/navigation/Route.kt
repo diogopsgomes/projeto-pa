@@ -17,6 +17,8 @@ sealed class Route{
     @Serializable
     data object Membros: Route()
     @Serializable
+    data object Profile: Route()
+    @Serializable
     data object NewMember: Route()
     @Serializable
     data object Users: Route()
