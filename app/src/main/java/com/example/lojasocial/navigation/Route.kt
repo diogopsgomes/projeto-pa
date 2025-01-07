@@ -15,6 +15,8 @@ sealed class Route{
     @Serializable
     data object Signup: Route()
     @Serializable
+    data object teste: Route()
+    @Serializable
     data object Membros: Route()
     @Serializable
     data object Profile: Route()

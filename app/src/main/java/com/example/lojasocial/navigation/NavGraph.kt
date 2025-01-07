@@ -30,6 +30,8 @@ import com.example.lojasocial.ui.presentation.profile.ProfileScreen
 import com.example.lojasocial.ui.presentation.profile.ProfileViewModel
 import com.example.lojasocial.ui.presentation.signup.SignUp
 import com.example.lojasocial.ui.presentation.signup.SignUpViewModel
+import com.example.lojasocial.ui.presentation.teste.TesteViewModel
+import com.example.lojasocial.ui.presentation.teste.testeScreen
 import com.example.lojasocial.ui.presentation.users.UsersScreen
 import com.example.lojasocial.ui.presentation.users.UsersViewModel
 
@@ -57,6 +59,10 @@ fun SetupNavGraph(loadingViewModel: LoadingViewModel){
         composable<Route.Dashboard>{
             val dashboardViewModel: DashboardViewModel = viewModel()
             Dashboard(navController = navController,dashboardViewModel)
+        }
+        composable<Route.teste>{
+            val testeViewModel: TesteViewModel = viewModel()
+            testeScreen(navController = navController, testeViewModel)
         }
         composable<Route.Membros>{
             val memberViewModel: MemberViewModel = viewModel()
