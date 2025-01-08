@@ -21,11 +21,15 @@ sealed class Route{
     @Serializable
     data object Profile: Route()
     @Serializable
+    data object Atividades: Route()
+    @Serializable
     data object NewMember: Route()
     @Serializable
     data object NewUser: Route()
     @Serializable
     data object Users: Route()
+    @Serializable
+    data object NewActivity: Route()
     @Serializable
     data object Activity: Route()
     @Serializable
