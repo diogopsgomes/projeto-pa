@@ -10,6 +10,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.example.lojasocial.ui.presentation.activity.ActivityScreen
+import com.example.lojasocial.ui.presentation.activity.ActivityViewModel
 import com.example.lojasocial.ui.presentation.checkOut.CheckOutScreen
 import com.example.lojasocial.ui.presentation.checkOut.CheckOutViewModel
 import com.example.lojasocial.ui.presentation.dashboard.Dashboard
@@ -79,6 +81,10 @@ fun SetupNavGraph(loadingViewModel: LoadingViewModel){
         composable<Route.Users>{
             val usersViewModel: UsersViewModel = viewModel()
             UsersScreen(navController = navController, usersViewModel)
+        }
+        composable<Route.Activity>{
+            val activityViewModel: ActivityViewModel = viewModel()
+            ActivityScreen(navController = navController, activityViewModel)
         }
         composable<Route.Profile>{
             val profileViewModel: ProfileViewModel = viewModel()

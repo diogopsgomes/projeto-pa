@@ -27,6 +27,8 @@ sealed class Route{
     @Serializable
     data object Users: Route()
     @Serializable
+    data object Activity: Route()
+    @Serializable
     data class MemberEdit(
         val memberId: String?
     ): Route()
